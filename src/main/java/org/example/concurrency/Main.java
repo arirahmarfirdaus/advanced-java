@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Thread threadOne = new ThreadExample();
-        Thread threadTwo = new ThreadExample();
+        Thread threadOne = new Thread(new RunnableExample());
+        Thread threadTwo = new Thread(() -> System.out.printf("Hello world from a lambda style runnable"));
 
         threadOne.setName("First thread");
         threadTwo.setName("Second thread");
