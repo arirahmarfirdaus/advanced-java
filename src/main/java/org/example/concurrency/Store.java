@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 
 public class Store {
 
-    static void purchase(StockChecker stockChecker, int amount) {
+    static synchronized void purchase(StockChecker stockChecker, int amount) {
         int stock = stockChecker.getStock();
         if (stock - amount < 0) {
             System.out.println("Out of stock");
