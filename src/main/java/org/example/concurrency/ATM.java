@@ -8,6 +8,11 @@ public class ATM {
             System.out.println("Transaction denied");
         } else {
             System.out.println("Handling transaction...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             account.debit(amount);
             System.out.println("$" + amount + " withdrawn");
         }
